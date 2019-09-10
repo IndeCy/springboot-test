@@ -1,0 +1,43 @@
+server:
+  port: 8080
+logging:
+  level:
+    org.springframework.web: INFO
+    com.lastcy.springboottest: INFO
+
+spring:
+  redis:
+    database: 0
+    host: 118.25.151.35
+    port: 6379
+    password: _Aa123456
+    timeout: 5000
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+  swagger:
+    base-package: com.lastcy.springboottest
+    enabled: true
+
+
+  datasource:
+    url: jdbc:mysql://118.25.151.35:3306/wilson?nullCatalogMeansCurrent=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: lastcy
+    password: _Aa123456
+
+mybatis:
+  # xml
+  mapperLocations: classpath:mapper/*Mapper.xml
+  # 实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.lastcy.springboottest.model
+  typeHandlersPackage:
+  checkConfigLocation: false
+  executorType: SIMPLE
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+mapper:
+  mappers: tk.mybatis.mapper.common.BaseMapper
