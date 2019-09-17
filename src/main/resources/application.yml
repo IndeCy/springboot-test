@@ -29,6 +29,15 @@ spring:
     username: lastcy
     password: _Aa123456
 
+  zipkin:
+    base-url: http://118.25.151.35:9411
+    sender:
+      type: kafka
+
+  sleuth:
+    sampler:
+      percentage: 1.0
+
 mybatis:
   # xml
   mapperLocations: classpath:mapper/*Mapper.xml
